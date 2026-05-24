@@ -16,6 +16,7 @@ if [ "${RUN_MIGRATIONS:-false}" = "true" ]; then
     php artisan migrate --force
 fi
 
-apachectl -M
+echo "=== ENABLED MPM ==="
+ls /etc/apache2/mods-enabled | grep mpm || true
 
 exec apache2-foreground

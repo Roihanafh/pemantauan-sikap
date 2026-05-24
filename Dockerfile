@@ -22,8 +22,10 @@ RUN apt-get update \
         libzip-dev \
         default-mysql-client \
     && docker-php-ext-install pdo_mysql zip \
-    && a2dismod mpm_event mpm_worker \
-    && a2enmod mpm_prefork rewrite headers \
+    && a2enmod rewrite headers \
+    && rm -f /etc/apache2/mods-enabled/mpm_event.load \
+    && rm -f /etc/apache2/mods-enabled/mpm_worker.load \
+    && a2enmod mpm_prefork \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
