@@ -22,7 +22,7 @@ RUN apt-get update \
         libzip-dev \
         default-mysql-client \
     && docker-php-ext-install pdo_mysql zip \
-    && a2dismod mpm_event \
+    && a2dismod mpm_event mpm_worker \
     && a2enmod mpm_prefork rewrite headers \
     && rm -rf /var/lib/apt/lists/*
 

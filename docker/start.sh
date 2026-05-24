@@ -16,8 +16,6 @@ if [ "${RUN_MIGRATIONS:-false}" = "true" ]; then
     php artisan migrate --force
 fi
 
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+apachectl -M
 
 exec apache2-foreground
