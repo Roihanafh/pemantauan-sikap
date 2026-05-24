@@ -1,0 +1,20 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dataTables_wrapper .dataTables_length select {
+    min-width: 4.5rem;
+    padding-right: 0.75rem;
+    background-image: none !important;
+}
+
+#penilaianTable .score-dropdown-toggle {
+    min-width: 3.25rem;
+    background-image: none !important;
+}
+
+#penilaianTable .score-dropdown .dropdown-menu {
+    min-width: 10rem;
+    z-index: 1080;
+}
