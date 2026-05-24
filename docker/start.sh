@@ -18,5 +18,9 @@ fi
 
 echo "=== ENABLED MPM ==="
 ls /etc/apache2/mods-enabled | grep mpm || true
+echo "=== APACHE ENABLED ==="
+ls -la /etc/apache2/mods-enabled/
 
+echo "=== APACHE AVAILABLE ==="
+ls -la /etc/apache2/mods-available/ | grep mpm
 exec apache2-foreground
